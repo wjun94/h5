@@ -22,8 +22,7 @@ export default () => {
     <Image className='btn' mode='aspectFit' onClick={onSubmit} src={BtnPng} />
     <Dialog
       visible={visible}
-      showCancelButton
-      title='验证成功'
+      title='验证成功！该成品为正品'
       onCancel={() => setVisible(false)}
       onConfirm={() => setVisible(false)}
     />
