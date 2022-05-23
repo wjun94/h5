@@ -21,7 +21,7 @@ export default class Index extends Component {
 
   render() {
     const type = window.location.hash.split('=')[1]
-    const txt = { date: '2021-2-22', label: '贵州习酒.御藏', info: '酒瓶' }
+    const txt = { date: '2021年12月18日', label: '贵州习酒.御藏', info: '酒瓶' }
     if (type === '1') {
       txt.date = '2021年12月18 '
       txt.label = '贵州习酒.御品'
