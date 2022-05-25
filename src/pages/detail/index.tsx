@@ -16,7 +16,7 @@ export default () => {
       setVisible(true)
     }
   }
-  return <Flex align='center' direction='col' className='index'>
+  return <Flex align='center' direction='col' className='detail'>
     <Image className='full' mode='aspectFit' src={FJpeg} />
     <Field maxlength={4} onInput={(e) => { setValue(e.detail.value) }} label='防伪码' className='inp' placeholder='请输入瓶身防伪码第二排后4位进行验证' />
     <Image className='btn' mode='aspectFit' onClick={onSubmit} src={BtnPng} />

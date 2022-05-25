@@ -1,37 +1,94 @@
-.full {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: max-content;
-  line-height: 0;
-}
+.index {
+  background-color: #338384;
+  padding-bottom: 14px;
 
-.bt {
-  border-top: 1px solid #fdd694;
-}
+  .full {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: max-content;
+    line-height: 0;
+  }
 
-.head {
-  position: relative;
-  .content {
+  .bt {
+    border-top: 1px solid #fdd694;
+  }
+
+  .logo {
+    height: 180px;
+    width: 180px;
+    padding: 6px;
     position: absolute;
-    color: #fff;
     top: 80px;
-    line-height: 1.4;
-    width: 400px;
-    left: 300px;
-    .tv-text--xs {
-      font-size: 20px !important;
+    left: 60px;
+    border-radius: 20px 0 20px 0;
+    border: 1px solid #fdd694;
+    img {
+      height: 180px;
+      width: 180px;
+      border-radius: 20px 0 20px 0;
     }
-    .txt {
-      font-size: 28px;
-      border-top: 2px solid #ff0004;
-      margin-top: 4px;
-      padding-top: 8px;
+  }
+
+  .head {
+    position: relative;
+    .content {
+      position: absolute;
+      color: #fff;
+      top: 80px;
+      line-height: 1.4;
+      width: 400px;
+      left: 300px;
+      .tv-text--xs {
+        font-size: 20px !important;
+      }
+      .txt {
+        font-size: 28px;
+        border-top: 2px solid #ff0004;
+        margin-top: 4px;
+        padding-top: 8px;
+      }
+      .info {
+        font-weight: bolder;
+        font-size: 28px;
+        color: #f1dd6d;
+      }
     }
-    .info {
-      font-weight: bolder;
-      font-size: 28px;
-      color: #f1dd6d;
+  }
+
+  .nav {
+    background-color: #338384;
+    width: 100%;
+    padding: 14px 0;
+    padding-top: 20px;
+    z-index: 20;
+    .iconfont {
+      color: #0f443a;
+    }
+    .img {
+      height: 100px;
+      width: 100px;
+      border-radius: 100px;
+      background-color: #fed592;
+      line-height: 1.2;
+    }
+    .tv-text {
+      color: #fed592;
+      margin-top: 12px;
+    }
+  }
+
+  .tv-title {
+    padding-top: 40px;
+  }
+
+  .more {
+    width: 100%;
+    padding: 20px 0;
+    color: #fed592;
+    .tv-button--default__plain.hydrated {
+      color: #fed592;
+      width: 700px;
     }
   }
 }
