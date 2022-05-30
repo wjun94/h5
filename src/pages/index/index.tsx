@@ -11,7 +11,7 @@ import './index.less'
 export default () => {
   const [visible, setVisible] = useState(false);
   const type = window.location.hash.split('=')[1]
-  const txt = { date: '2021年12月21日', label: '贵州习酒.御藏', info: '酒瓶' }
+  const txt = { date: '2021年12月18日', label: '贵州习酒.御藏', info: '酒瓶' }
   if (type === '1') {
     txt.date = '2021年12月16日'
     txt.label = '贵州习酒.御品'
