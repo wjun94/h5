@@ -12,6 +12,16 @@ export default () => {
   const [visible, setVisible] = useState(false);
   const type = window.location.hash.split('=')[1]
   const txt = { date: '2021年12月18日', label: '贵州习酒.御藏', info: '酒瓶' }
+  // 随机6位数
+  const code = () => {
+    const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+    const maxPos = chars.length
+    let target = ''
+    for (let i = 0; i < 6; i++) {
+      target += chars.charAt(Math.floor(Math.random() * maxPos))
+    }
+    return target
+  }
   if (type === '1') {
     txt.date = '2021年12月16日'
     txt.label = '贵州习酒.御品'
@@ -30,16 +40,24 @@ export default () => {
     }
   }
   return (
-    <Flex direction='col' className='index'>
+    <Flex direction='column' className='index'>
       <Flex className='head'>
         <Image className='full' mode='aspectFit' src={OneJng} />
         <Flex className='logo'>
           <Image src={type === '1' ? Logo1Jpg : LogoJpg} />
         </Flex>
-        <Flex className='content' direction='col'>
+        <Flex className='content' direction='column'>
           <Typography.Text type='white' size='xs'>名称：{txt.label}</Typography.Text>
           <Typography.Text type='white' size='xs'>生产日期：{txt.date}</Typography.Text>
-          <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXX</Typography.Text>
+          <Typography.Text type='white' size='xs'>箱内{txt.info}防伪码后6位：</Typography.Text>
+          <Flex>
+            <Typography.Text type='white' size='xs' className='mr20'>{code()}</Typography.Text>
+            <Typography.Text type='white' size='xs' className='mr20'>{code()}</Typography.Text>
+            <Typography.Text type='white' size='xs' className='mr20'>{code()}</Typography.Text>
+            <Typography.Text type='white' size='xs' className='mr20'>{code()}</Typography.Text>
+            <Typography.Text type='white' size='xs' className='mr20'>{code()}</Typography.Text>
+            <Typography.Text type='white' size='xs' className='mr20'>{code()}</Typography.Text>
+          </Flex>
           <Typography.Text onClick={() => navigateTo({ url: '/pages/detail/index' })} className='txt' type='white'>该产品为<Typography.Text className='info'>真品</Typography.Text>，请放心引用，如有疑问请<Typography.Text className='info'>进一步验证</Typography.Text>。</Typography.Text>
         </Flex>
       </Flex>
@@ -60,7 +78,7 @@ export default () => {
           }, {
             name: '微信服务',
             icon: 'icon-weixin',
-          }].map((item, i) => <Flex direction='col' align='center' key={item.name} onClick={() => onNav(i)}>
+          }].map((item, i) => <Flex direction='column' align='center' key={item.name} onClick={() => onNav(i)}>
             <Flex justify='center' align='center' className='img'>
               <Icon size='xl' icon={item.icon} />
             </Flex>

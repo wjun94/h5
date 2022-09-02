@@ -51,14 +51,14 @@ export default () => {
       value: '贵州省遵义市习水县习酒镇'
     },
   ]
-  return <Flex style={{ backgroundImage: `url(${BgdPng})` }} align='center' direction='col' className='info-page'>
+  return <Flex style={{ backgroundImage: `url(${BgdPng})` }} align='center' direction='column' className='info-page'>
     <Flex className='head' justify='center' style={{ backgroundImage: `url(${InfoPng})` }}>
       <Image className='img2' src={type === '1' ? Logo1Jpg : LogoJpg} />
     </Flex>
     <Flex className='button' align='center' justify='center' style={{ backgroundImage: `url(${Btn2Png})` }}>
       <Typography.Text type='white'>产品详情</Typography.Text>
     </Flex>
-    <Flex direction='col' className='footer'>
+    <Flex direction='column' className='footer'>
       {
         arr.map(item => <Flex key={item.label} className='main'>
           <Typography.Text className='first' size='xl'>{item.label}</Typography.Text>
