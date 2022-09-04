@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
 import { Flex, Dialog, Typography, Icon, Button } from 'taro-van'
 import { parse } from 'query-string';
-import { codes } from './code'
+import { codes1 } from './code1'
+import { codes2 } from './code2'
 import OneJng from '../image/1.png'
 import LogoJpg from '../image/logo.jpg'
 import Logo1Jpg from '../image/logo1.jpg'
@@ -17,7 +18,7 @@ export default () => {
   console.log(idx)
   const txt = { date: '2021年12月18日', label: '贵州习酒.御藏', info: '酒瓶' }
   // 随机6位数
-  /* const code = () => {
+  const code = () => {
     const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
     const maxPos = chars.length
     let target = ''
@@ -25,7 +26,17 @@ export default () => {
       target += chars.charAt(Math.floor(Math.random() * maxPos))
     }
     return target
-  } */
+  }
+  useEffect(() => {
+    const arr: any = []
+    for (let i = 0; i < 2000; i++) {
+      arr[i] = []
+      for (let j = 0; j < 6; j++) {
+        arr[i].push(code())
+      }
+    }
+    console.log(JSON.stringify(arr))
+  })
   if (type === '1') {
     txt.date = '2021年12月16日'
     txt.label = '贵州习酒.御品'
@@ -56,7 +67,7 @@ export default () => {
           <Typography.Text type='white' size='xs'>箱内{txt.info}防伪码后6位：</Typography.Text>
           <Flex>
             {
-              codes[Number(idx || 0)].map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>)
+              (type === '1' ? codes1 : codes2)[Number(idx || 0)].map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>)
             }
           </Flex>
           <Typography.Text onClick={() => navigateTo({ url: '/pages/detail/index' })} className='txt' type='white'>该产品为<Typography.Text className='info'>真品</Typography.Text>，请放心引用，如有疑问请<Typography.Text className='info'>进一步验证</Typography.Text>。</Typography.Text>
