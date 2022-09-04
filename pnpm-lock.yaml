@@ -20,6 +20,7 @@ specifiers:
   eslint-plugin-import: ^2.12.0
   eslint-plugin-react: ^7.8.2
   eslint-plugin-react-hooks: ^4.2.0
+  query-string: ^7.1.1
   react: ^17.0.0
   react-dom: ^17.0.0
   stylelint: 9.3.0
@@ -32,6 +33,7 @@ dependencies:
   '@tarojs/react': 3.3.10_react@17.0.2
   '@tarojs/runtime': 3.3.10
   '@tarojs/taro': 3.3.10
+  query-string: 7.1.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   taro-van: 1.1.8_26ydr34bxxtn6tfv5khmk3uztu
@@ -11542,6 +11544,16 @@ packages:
       filter-obj: 1.1.0
       split-on-first: 1.1.0
       strict-uri-encode: 2.0.0
+
+  /query-string/7.1.1:
+    resolution: {integrity: sha512-MplouLRDHBZSG9z7fpuAAcI7aAYjDLhtsiVZsevsfaHWDS2IDdORKbSd1kWUA+V4zyva/HZoSfpwnYMMQDhb0w==}
+    engines: {node: '>=6'}
+    dependencies:
+      decode-uri-component: 0.2.0
+      filter-obj: 1.1.0
+      split-on-first: 1.1.0
+      strict-uri-encode: 2.0.0
+    dev: false
 
   /querystring-es3/0.2.1:
     resolution: {integrity: sha512-773xhDQnZBMFobEiztv8LIl70ch5MSF/jUQVlhwFyBILqq96anmoctVIYz+ZRp0qbCKATTn6ev02M3r7Ga5vqA==}
