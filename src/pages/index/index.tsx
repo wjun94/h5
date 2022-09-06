@@ -35,7 +35,6 @@ export default () => {
         arr[i].push(code())
       }
     }
-    console.log(JSON.stringify(arr))
   })
   if (type === '1') {
     txt.date = '2021年12月16日'
@@ -67,7 +66,7 @@ export default () => {
           <Typography.Text type='white' size='xs'>箱内{txt.info}防伪码后6位：</Typography.Text>
           <Flex>
             {
-              (type === '1' ? codes1 : codes2)[Number(idx || 0)].map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>)
+              idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXXXX</Typography.Text> : (type === '1' ? codes1 : codes2)[Number(idx || 0)].map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>)
             }
           </Flex>
           <Typography.Text onClick={() => navigateTo({ url: '/pages/detail/index' })} className='txt' type='white'>该产品为<Typography.Text className='info'>真品</Typography.Text>，请放心引用，如有疑问请<Typography.Text className='info'>进一步验证</Typography.Text>。</Typography.Text>
