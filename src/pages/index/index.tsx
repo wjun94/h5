@@ -14,8 +14,8 @@ import './index.less'
 export default () => {
   const [visible, setVisible] = useState(false);
   const search = window.location.hash.match(/\?([\w\W])+/)
-  const { type, idx } = parse(search ? search[0] : '')
-  console.log(idx)
+  // idx 取第几个数组 num 数组里的6位数
+  const { type, idx, num } = parse(search ? search[0] : '')
   const txt = { date: '2021年12月18日', label: '贵州习酒.御藏', info: '酒瓶' }
   // 随机6位数
   const code = () => {
@@ -53,6 +53,8 @@ export default () => {
       setVisible(true)
     }
   }
+  // 6位码
+  const result: any = (type === '1' ? codes1 : codes2)[Number(idx || 0)] || []
   return (
     <Flex direction='column' className='index'>
       <Flex className='head'>
@@ -66,7 +68,8 @@ export default () => {
           <Typography.Text type='white' size='xs'>箱内{txt.info}防伪码后6位：</Typography.Text>
           <Flex>
             {
-              idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXXXX</Typography.Text> : (type === '1' ? codes1 : codes2)[Number(idx || 0)].map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>)
+              idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXXXX</Typography.Text> :
+                num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : <Typography.Text type='white' size='xs' className='mr20'>062500182099345348{result[Number(num)]}</Typography.Text>
             }
           </Flex>
           <Typography.Text onClick={() => navigateTo({ url: '/pages/detail/index' })} className='txt' type='white'>该产品为<Typography.Text className='info'>真品</Typography.Text>，请放心引用，如有疑问请<Typography.Text className='info'>进一步验证</Typography.Text>。</Typography.Text>
