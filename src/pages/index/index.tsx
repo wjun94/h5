@@ -65,7 +65,7 @@ export default () => {
         <Flex className='content' direction='column'>
           <Typography.Text type='white' size='xs'>名称：{txt.label}</Typography.Text>
           <Typography.Text type='white' size='xs'>生产日期：{txt.date}</Typography.Text>
-          <Typography.Text type='white' size='xs'>箱内{txt.info}防伪码后6位：</Typography.Text>
+          {idx !== undefined && <Typography.Text type='white' size='xs'>箱内酒盒防伪码后6位：</Typography.Text>}
           <Flex>
             {
               idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXXXX</Typography.Text> :
