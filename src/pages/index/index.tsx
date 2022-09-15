@@ -68,7 +68,7 @@ export default () => {
           {idx !== undefined && <Typography.Text type='white' size='xs'>箱内酒盒防伪码后6位：</Typography.Text>}
           <Flex>
             {
-              idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXXXX</Typography.Text> :
+              idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXX</Typography.Text> :
                 num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : <Typography.Text type='white' size='xs' className='mr20'>062500182099345348{result[Number(num)]}</Typography.Text>
             }
           </Flex>
