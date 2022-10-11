@@ -27,6 +27,16 @@ export default () => {
     }
     return target
   }
+  // 数字6位随机数
+  const numCode = () => {
+    const chars = '0123456789';
+    const maxPos = chars.length
+    let target = ''
+    for (let i = 0; i < 6; i++) {
+      target += chars.charAt(Math.floor(Math.random() * maxPos))
+    }
+    return target
+  }
   useEffect(() => {
     const arr: any = []
     for (let i = 0; i < 2000; i++) {
@@ -68,8 +78,8 @@ export default () => {
           {idx !== undefined && <Typography.Text type='white' size='xs'>箱内酒盒防伪码后6位：</Typography.Text>}
           <Flex>
             {
-              idx === undefined ? <Typography.Text type='white' size='xs'>{txt.info}防伪码：062500182099345348XXXX</Typography.Text> :
-                num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : <Typography.Text type='white' size='xs' className='mr20'>062500182099345348{result[Number(num)]}</Typography.Text>
+              idx === undefined ? <Typography.Text style={{ whiteSpace: 'nowrap', fontSize: '10px !important' }} type='white' size='xs'>{txt.info}防伪码：06250018{numCode()}5348XXXXXX</Typography.Text> :
+                num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : <Typography.Text type='white' size='xs' className='mr20'>06250018{numCode()}5348{result[Number(num)]}</Typography.Text>
             }
           </Flex>
           <Typography.Text onClick={() => navigateTo({ url: '/pages/detail/index' })} className='txt' type='white'>该产品为<Typography.Text className='info'>真品</Typography.Text>，请放心引用，如有疑问请<Typography.Text className='info'>进一步验证</Typography.Text>。</Typography.Text>
@@ -118,6 +128,6 @@ export default () => {
         onCancel={() => setVisible(false)}
         onConfirm={() => setVisible(false)}
       />
-    </Flex>
+    </Flex >
   )
 }
