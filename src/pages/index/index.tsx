@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
-import { Flex, Dialog, Typography, Icon, Button, Empty } from 'taro-van'
+import { Flex, Dialog, Typography, Icon, Button } from 'taro-van'
 import { parse } from 'query-string';
 import { codes1 } from './code1'
 import { codes2 } from './code2'
@@ -55,11 +55,6 @@ export default () => {
   }
   // 6位码
   const result: any = (type === '1' ? codes1 : codes2)[Number(idx || 0)] || []
-  if (true) {
-    return <Empty>
-      <Typography.Text type='secondary'>页面维护中</Typography.Text>
-    </Empty>
-  }
   return (
     <Flex direction='column' className='index'>
       <Flex className='head'>
