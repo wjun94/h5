@@ -104,7 +104,7 @@ export default () => {
             icon: 'icon-weixin',
           }].map((item, i) => <Flex direction='column' align='center' key={item.name} onClick={() => onNav(i)}>
             <Flex justify='center' align='center' className='img'>
-              <Icon size='xl' icon={item.icon} />
+              <Icon style={{ fontSize: '32px' }} size='xl' icon={item.icon} />
             </Flex>
             <Typography.Text>{item.name}</Typography.Text>
           </Flex>)
