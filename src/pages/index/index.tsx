@@ -79,7 +79,7 @@ export default () => {
           <Flex className='border'>
             {
               idx === undefined ? <Typography.Text style={{ whiteSpace: 'nowrap', fontSize: '10px !important' }} type='white' size='xs'>{txt.info}防伪码:{type === '1' ? '0625001828994536XXXXXX' : `06250018${numCode()}5348XXXXXX`}</Typography.Text> :
-                num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : <Typography.Text type='white' size='xs' className='mr20'>06250018{numCode()}5348{result[Number(num)]}</Typography.Text>
+                num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : <Typography.Text type='white' size='xs' className='mr20'>{/* 06250018{numCode()}5348{result[Number(num)]} */}{`06250018${numCode()}5348XXXXXX`}</Typography.Text>
             }
           </Flex>
           <Typography.Text onClick={() => navigateTo({ url: '/pages/detail/index' })} className='txt' type='white'>该产品为<Typography.Text className='info'>真品</Typography.Text>，请放心引用，如有疑问请<Typography.Text className='info'>进一步验证</Typography.Text>。</Typography.Text>
