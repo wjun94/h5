@@ -78,7 +78,7 @@ export default () => {
           {idx !== undefined && <Typography.Text className={num !== undefined ? 'border' : ''} type='white' style={{ whiteSpace: 'nowrap' }} size='xs'>{num ? `酒瓶防伪码:${`06250018${numCode()}5348XXXX`}` : '箱内酒盒防伪码后6位：'}</Typography.Text>}
           <Flex className='border'>
             {
-              idx === undefined ? <Typography.Text style={{ whiteSpace: 'nowrap', fontSize: '10px !important' }} type='white' size='xs'>{txt.info}防伪码:{type === '1' ? '0625001828994536XXXXXX' : `06250018${numCode()}5348XXXXXX`}</Typography.Text> :
+              idx === undefined ? <Typography.Text style={{ whiteSpace: 'nowrap', fontSize: '10px !important' }} type='white' size='xs'>{txt.info}防伪码:{type === '1' ? '0625001828994536XXXX' : `06250018${numCode()}5348XXXX`}</Typography.Text> :
                 num === undefined ? result.map(item => <Typography.Text key={item} type='white' size='xs' className='mr20'>{item}</Typography.Text>) : ''
             }
           </Flex>
