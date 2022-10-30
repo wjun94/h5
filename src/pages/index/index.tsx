@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
-import { Flex, Dialog, Typography, Icon, Button } from 'taro-van'
+import { Flex, Dialog, Typography, Empty, Icon, Button } from 'taro-van'
 import { parse } from 'query-string';
 import { codes1 } from './code1'
 import { codes2 } from './code2'
@@ -12,6 +12,7 @@ import ThreeJpeg from '../image/3.jpeg'
 import './index.less'
 
 export default () => {
+  return <Empty description='升级中' />
   const [visible, setVisible] = useState(false);
   const search = window.location.hash.match(/\?([\w\W])+/)
   // idx 取第几个数组 num 数组里的6位数
